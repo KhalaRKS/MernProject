@@ -2,14 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import jwt from "jsonwebtoken";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import "./Dashboard.scss";
-import User from "../../components/User/User";
-import { TailSpin } from "react-loader-spinner";
 import { usuarioContext } from "../../context/UserContext";
-import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import { IoIosAddCircle } from "react-icons/io";
-import { TableUser } from "../../components/TableUser/TableUser";
-import { EditUser } from "../EditUser/EditUser";
-import { AddUser } from "../../components/AddUser/AddUser";
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -35,7 +30,7 @@ const Dashboard = () => {
     event.preventDefault();
     setLoading(true);
   
-      fetch('http://localhost:2690/api/users', {
+      fetch('https://proyectoreactcrud.herokuapp.com/api/users', {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

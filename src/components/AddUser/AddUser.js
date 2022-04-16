@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import InputForm from "../InputForm";
 import { TailSpin } from "react-loader-spinner";
-import toast from "react-hot-toast";
 
 export function AddUser() {
   const [name, setName] = useState("");

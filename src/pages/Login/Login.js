@@ -15,7 +15,7 @@ function App() {
 
   async function loginUser(event) {
     event.preventDefault()
-   fetch('http://localhost:2690/api/login',
+   fetch('https://proyectoreactcrud.herokuapp.com/api/login',
     {
       method: 'POST',
       headers:{

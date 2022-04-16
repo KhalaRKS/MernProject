@@ -1,17 +1,16 @@
 import React, { useContext } from "react";
 import { GoTrashcan, GoPencil } from "react-icons/go";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./EditButtons.scss";
 import { editUserContext } from "../../context/EditUserContext";
 
 function EditButtons(props) {
   const { editUser } = useContext(editUserContext);
-  const navigate = useNavigate();
   const { email, refresh } = props;
 
   async function removeUser(e) {
     e.preventDefault();
-    const req = await fetch("http://localhost:2690/api/remove/user", {
+    const req = await fetch("https://proyectoreactcrud.herokuapp.com/api/remove/user", {
       timeout: 10000,
       method: "POST",
       headers: {

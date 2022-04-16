@@ -7,12 +7,10 @@ export function CreateUser() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [load, setLoad] = useState(false)
 
   function createUserNewUser(event) {
     event.preventDefault();
-    setLoad(true);
-    fetch("http://localhost:2690/api/register", {
+    fetch("https://proyectoreactcrud.herokuapp.com/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
