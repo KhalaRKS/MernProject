@@ -1,7 +1,5 @@
 import React, { useEffect, useContext, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { usuarioContext } from '../../context/UserContext';
-import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import InputForm from '../../components/InputForm';
 import './EditUser.scss'
@@ -11,7 +9,6 @@ import toast from 'react-hot-toast';
 export function EditUser() {
 
     const {mail} = useContext(editUserContext)
-    const { token, removeUserLogin } = useContext(usuarioContext)
 
     /**USESTATE DEL INPUT */
     const [name, setName] = useState('')
@@ -22,7 +19,7 @@ export function EditUser() {
 
     useEffect(() => {
 
-      fetch('http://localhost:2690/api/user/', {
+      fetch('https://proyectoreactcrud.herokuapp.com/api/user/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

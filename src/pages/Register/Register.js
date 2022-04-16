@@ -16,7 +16,7 @@ function App() {
   async function registerUser(event) {
     event.preventDefault();
     setLoad(true);
-    fetch("http://localhost:2690/api/register", {
+    fetch("https://proyectoreactcrud.herokuapp.com/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
