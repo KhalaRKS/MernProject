@@ -13,7 +13,9 @@ const Dashboard = () => {
   const [users, setUsers] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
+
   useEffect(() => {
+    console.log(process.env.REACT_APP_SECRET_TOKEN_KEY);
     const { token, removeUserLogin } = contexto;
     console.log(token, process.env.REACT_APP_SECRET_TOKEN_KEY);
     if (token) {
